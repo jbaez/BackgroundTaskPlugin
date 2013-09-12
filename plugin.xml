@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="com.github.jbaez.plugins.BackgroundTask"
+    version="0.1.0">
+
+    <name>BackgroundTask</name>
+
+    <engines>
+        <engine name="cordova" version=">=2.2.0" />
+    </engines>
+
+    <js-module src="www/background-task.js" name="BackgroundTask">
+        <clobbers target="BackgroundTask" />
+    </js-module>
+        
+    <!-- ios -->
+    <platform name="ios">            
+        <config-file target="config.xml" parent="/widget">
+            <feature name="BackgroundTask">
+                <param name="ios-package" value="BackgroundTask" /> 
+            </feature>
+        </config-file>
+    
+        <header-file src="src/ios/BackgroundTask.h" />
+	    <source-file src="src/ios/BackgroundTask.m" />   	
+    </platform>
+
+</plugin>
